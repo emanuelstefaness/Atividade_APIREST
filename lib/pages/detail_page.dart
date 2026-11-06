@@ -65,42 +65,19 @@ class _DetailPageState extends State<DetailPage> {
           ),
           body: SingleChildScrollView(
             padding: EdgeInsets.all(16),
-            child: Column(
-              children: [
-                Image.network(item.image, height: 220),
-                SizedBox(height: 16),
-                Text(
-                  "#${item.id} ${item.name.toUpperCase()}",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 16),
-                Card(
-                  child: Column(
-                    children: [
-                      ListTile(
-                        leading: Icon(Icons.category),
-                        title: Text("Tipo"),
-                        subtitle: Text(item.types.join(", ")),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.height),
-                        title: Text("Altura"),
-                        subtitle: Text("${item.height} m"),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.monitor_weight),
-                        title: Text("Peso"),
-                        subtitle: Text("${item.weight} kg"),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.flash_on),
-                        title: Text("Habilidades"),
-                        subtitle: Text(item.abilities.join(", ")),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            child: SizedBox(
+              width: double.infinity,
+              child: Column(
+                children: [
+                  Image.network(item.image, height: 220),
+                  SizedBox(height: 16),
+                  Text("Número: ${item.id}"),
+                  Text("Tipo: ${item.types.join(", ")}"),
+                  Text("Altura: ${item.height} m"),
+                  Text("Peso: ${item.weight} kg"),
+                  Text("Habilidades: ${item.abilities.join(", ")}"),
+                ],
+              ),
             ),
           ),
         );
